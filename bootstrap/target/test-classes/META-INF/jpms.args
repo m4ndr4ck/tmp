@@ -1,0 +1,4 @@
+--patch-module
+com.tlf.oss.bootstrap=_
+--add-reads
+com.tlf.oss.bootstrap=ALL-UNNAMED

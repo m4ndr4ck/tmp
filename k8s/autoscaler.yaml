@@ -1,0 +1,13 @@
+kind: HorizontalPodAutoscaler
+apiVersion: autoscaling/v1
+metadata:
+  name: odp-microservices-topology-inventory-exporter
+spec:
+  scaleTargetRef:
+    kind: Deployment
+    name: odp-microservices-topology-inventory-exporter
+    apiVersion: apps/v1
+  minReplicas: 2
+  # Criticidade - Baixa: 4 | Media: 8 | Alta: 12
+  maxReplicas: 4
+  targetCPUUtilizationPercentage: 50

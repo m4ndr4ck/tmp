@@ -1,0 +1,1 @@
+load("stages/code-analysis-template.groovy")

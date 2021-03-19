@@ -1,0 +1,4 @@
+com/tlf/oss/framework/topologyinventory/adapters/out/neo4j/SampleNeo4jAdapterOut.class
+module-info.class
+com/tlf/oss/framework/topologyinventory/adapters/out/file/SampleFileAdapterOut.class
+com/tlf/oss/framework/topologyinventory/adapters/in/rest/SampleRestAdapterIn.class

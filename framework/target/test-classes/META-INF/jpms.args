@@ -1,0 +1,4 @@
+--patch-module
+com.tlf.oss.topologyinventory.framework=_
+--add-reads
+com.tlf.oss.topologyinventory.framework=ALL-UNNAMED

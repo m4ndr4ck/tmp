@@ -1,0 +1,17 @@
+quarkus:
+  swagger-ui:
+    always-include: true
+    urls-primary-name: Topology Inventory Exporter
+    theme: material
+    title: OSS - Topology Inventory Exporter API
+    footer: &#169; 2021 | Telefônica Brasil
+    display-operation-id: true
+    validator-url: localhost
+  http:
+    root-path: ${CONTEXT_PATH:/topology-inventory-exporter}
+
+mp:
+  openapi.extensions.smallrye.info:
+  title: Topology Inventory Exporter
+  version: 1.0
+  description: Aplicação que exporta arquivos para o Topology Inventory

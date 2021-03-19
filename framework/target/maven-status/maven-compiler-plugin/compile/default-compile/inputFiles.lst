@@ -1,0 +1,4 @@
+/home/m4ndr4ck/src-topology-inventory-exporter/framework/src/main/java/com/tlf/oss/framework/topologyinventory/adapters/in/rest/SampleRestAdapterIn.java
+/home/m4ndr4ck/src-topology-inventory-exporter/framework/src/main/java/com/tlf/oss/framework/topologyinventory/adapters/out/file/SampleFileAdapterOut.java
+/home/m4ndr4ck/src-topology-inventory-exporter/framework/src/main/java/module-info.java
+/home/m4ndr4ck/src-topology-inventory-exporter/framework/src/main/java/com/tlf/oss/framework/topologyinventory/adapters/out/neo4j/SampleNeo4jAdapterOut.java

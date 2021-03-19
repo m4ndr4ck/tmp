@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: odp-microservices-topology-inventory-exporter
+  annotations:
+    "sidecar.jaegertracing.io/inject": "true"
+  labels:
+    app: odp-microservices-topology-inventory-exporter
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: odp-microservices-topology-inventory-exporter
+  template:
+    metadata:
+      labels:
+        app: odp-microservices-topology-inventory-exporter
+    spec:
+      containers:
+        - name: odp-microservices-topology-inventory-exporter
+          image: 10.129.178.173:5004/odp-microservices/topology-inventory-exporter:latest
+          envFrom:
+          - configMapRef:
+              name: odp-microservices-topology-inventory-exporter
+          livenessProbe:
+            httpGet:
+              path: /topology-inventory-exporter/q/health/live
+              port: 8080
+            initialDelaySeconds: 60
+            timeoutSeconds: 5
+            periodSeconds: 3
+          resources:
+            requests:
+              # Baixa criticidade: 256Mi | Media Criticidade: 512Mi | Alta Criticidade: >=1024Mi
+              memory: "512Mi"
+              # Baixa criticidade: 500m | Media Criticidade: 1000m | Alta Criticidade: >=2000m
+              cpu: "1000m" # 1000m = 1vCPU
+            limits:
+              # Baixa criticidade: 512Mi | Media Criticidade: 1024Mi | Alta Criticidade: >=2048Mi
+              memory: "1024Mi"
+              # Baixa criticidade: 1000m | Media Criticidade: 2000m | Alta Criticidade: >=4000m
+              cpu: "2000m" # 1000m = 1vCPU
+          ports:
+            - containerPort: 8080

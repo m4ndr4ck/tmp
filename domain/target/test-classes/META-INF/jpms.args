@@ -1,0 +1,4 @@
+--patch-module
+com.tlf.oss.topologyinventory.domain=_
+--add-reads
+com.tlf.oss.topologyinventory.domain=ALL-UNNAMED
